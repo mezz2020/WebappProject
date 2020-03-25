@@ -9,3 +9,4 @@ class Index extends BaseController
     {
         return 'Thinkphp 6.0 Webapp Project!';
     }
+}
