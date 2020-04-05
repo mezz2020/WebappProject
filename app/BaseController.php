@@ -37,6 +37,13 @@ abstract class BaseController
     protected $middleware = [];
 
     /**
+     * Ajax统一返回Code
+     * @var array
+     * @author Mezz
+     */
+    protected $responseCode = [];
+
+    /**
      * 构造方法
      * @access public
      * @param  App  $app  应用对象
@@ -52,7 +59,10 @@ abstract class BaseController
 
     // 初始化
     protected function initialize()
-    {}
+    {
+        \think\facade\Config::load('extra/config', 'extra');
+        $this->responseCode =   config("extra.response_code");
+    }
 
     /**
      * 验证数据

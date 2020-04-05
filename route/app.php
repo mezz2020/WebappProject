@@ -10,8 +10,6 @@
 // +----------------------------------------------------------------------
 use think\facade\Route;
 
-Route::get('think', function () {
-    return 'hello,ThinkPHP6!';
-});
-
-Route::get('hello/:name', 'index/hello');
+Route::rule('user/signin', 'User/signin');
+Route::rule('user/signup', 'User/signup');
+Route::rule('user/index', 'User/index')->middleware(['auth']);

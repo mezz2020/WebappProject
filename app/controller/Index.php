@@ -7,6 +7,11 @@ class Index extends BaseController
 {
     public function index()
     {
-        return 'Thinkphp 6.0 Webapp Project!';
+        return 'Thinkphp 6.0 Webapp Project......!';
+    }
+
+    public function mezz()
+    {
+        return 'Redirect Mezz.....!';
     }
 }
