@@ -6,6 +6,7 @@ use app\model\User as UserModel;
 use app\validate\User as UserValidate;
 use think\exception\ValidateException;
 use think\facade\Cache;
+use think\facade\Event;
 
 class User extends BaseController
 {
@@ -86,5 +87,17 @@ class User extends BaseController
         $user_info  =   $this->request->user_info;
 
         return ajaxReturn($user_info);
+    }
+
+    public function test()
+    {
+        $condition['user_id']   =   5;
+        $user_info  =   $this->mod_user->getUserInfo($condition);
+
+        echo '控制器输出：Test Userinfo<br />';
+
+        Event::trigger('Listest');
+
+        //return ajaxReturn($user_info);
     }
 }

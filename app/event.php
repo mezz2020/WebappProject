@@ -1,8 +1,7 @@
 <?php
 // 事件定义文件
 return [
-    'bind'      => [
-    ],
+    'bind'      => [],
 
     'listen'    => [
         'AppInit'  => [],
@@ -10,6 +9,8 @@ return [
         'HttpEnd'  => [],
         'LogLevel' => [],
         'LogWrite' => [],
+
+        "Listest"  =>  ['app\listener\WebsocketMsg']
     ],
 
     'subscribe' => [

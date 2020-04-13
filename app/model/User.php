@@ -10,5 +10,14 @@ use think\Model;
  */
 class User extends Model
 {
-    //
+    public function getUserInfo(array $cond = null) 
+    {
+        $condition  =   [];
+
+        if (isset($cond['user_id']))
+            $condition[]    =   ["user_id", "=", $cond['user_id']];
+
+        $result     =   $this->where($condition)->find();
+        return $result;
+    }
 }
